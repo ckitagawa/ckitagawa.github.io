@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type='text/javascript' src="jquery-1.12.0.min.js"></script>
+    <script type='text/javascript' src="jquery-dateFormat.min.js"></script>
 <head>
     <meta charset="utf-8">
 </head>
@@ -38,17 +39,20 @@
         </div>
         <div id="about">
             <div class="columns">
-                <script> 
-                    var x = $.datepicker.formatDate('M dd, yy', new Date(document.lastModified));  
-                    document.getElementById("txtDate").innerHTML = x;
-                </script>
                 <p>
-                    "This website was created by Calder Kitagawa using HTML5, JS, and CSS using GitHub.io for hosting." 
-                    <br>
-                    "Last Updated: " <span id="txtDate" ></span>
+                    This website was created by Calder Kitagawa using HTML5, JS, jQuery, and CSS3 using GitHub.io for hosting.
+                    Last Updated: <span class="txtdate"></span>
                 </p>
             </div>
         </div>
     </div>
 </body>
+<script type='text/javascript'> 
+$(document).ready(function () {
+    $('span.txtdate').each(function() { 
+        var dateFormat = $.format.date(new Date(document.lastModified), 'MMM d, yyyy');
+        $(this).html(dateFormat);
+    });
+});
+</script>
 </html>
