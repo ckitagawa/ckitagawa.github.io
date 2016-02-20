@@ -1,26 +1,36 @@
 <!DOCTYPE HTML>
 
 <html>
-<script type='text/javascript' src="jquery-1.12.0.min.js"></script>
-    <script type='text/javascript' src="jquery-dateFormat.min.js"></script>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type='text/javascript' src="jquery-1.12.0.min.js"></script>
+    <script type='text/javascript' src="jquery-dateFormat.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/main.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <meta charset="utf-8">
 </head>
 <body id="homepage">
-    <div id="header wrapper"> 
+    <div id="header-wrapper"> 
         <div id="header">
             <div class="columns">
-                <div class="leftnav">
-                    <a class="Menu Button"></a>
+                <div class="hleftnav">
+                    <a class="menu-btn">
+                        <a id="mbar"></a>
+                        <a id="mbar"></a>
+                        <a id="mbar"></a>
+                    </a>
                 </div>
                 <h1 class="logo">
-                    <a href="index.html">
+                    <a id="linkarea" href="index.html">
                         <a id="CK">CK</a>
                             <i></i>
                         <a id="JP">北川</a>
                     </a>
                 </h1>
-                <div class="rightnav">
+                <div class="hrightnav">
                     <a class="social-links github" href="https://github.com/ckitagawa" title="GitHub">GitHub</a>
                     <a class="social-links linkedin" href="https://ca.linkedin.com/in/calder-kitagawa-a75596ab" title="LinkedIn">LinkedIn</a>
                 </div>
@@ -38,21 +48,24 @@
         
         </div>
         <div id="about">
-            <div class="columns">
-                <p>
-                    This website was created by Calder Kitagawa using HTML5, JS, jQuery, and CSS3 using GitHub.io for hosting.
-                    Last Updated: <span class="txtdate"></span>
-                </p>
-            </div>
+            <p>
+                This website was created by Calder Kitagawa using HTML5, JS, jQuery, BootStrap and CSS3 using GitHub.io for hosting.
+                <br>
+                Last Updated: <span class="txtdate"></span>
+            </p>
         </div>
     </div>
 </body>
+    
+<!-- Scripts -->
 <script type='text/javascript'> 
 $(document).ready(function () {
     $('span.txtdate').each(function() { 
         var dateFormat = $.format.date(new Date(document.lastModified), 'MMM d, yyyy');
         $(this).html(dateFormat);
     });
+    var h = $('#header').height;
+    $('menu')
 });
 </script>
 </html>
